@@ -16,11 +16,10 @@ COPY conf/ /opt/docker/
 RUN /usr/local/bin/apt-install \
         nginx \
     && /opt/docker/bin/provision run --tag bootstrap --role webdevops-nginx --role webdevops-php-nginx \
-    && /opt/docker/bin/bootstrap.sh
+    && /opt/docker/bin/bootstrap.sh \
 
 # Install youtube-dl
-RUN \
-curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && \
-chmod a+rx /usr/local/bin/youtube-dl \
+curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl \
+&& chmod a+rx /usr/local/bin/youtube-dl
 
 EXPOSE 80 443
