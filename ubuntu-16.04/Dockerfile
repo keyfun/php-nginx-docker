@@ -21,6 +21,6 @@ RUN /usr/local/bin/apt-install \
 # Install youtube-dl
 RUN \
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && \
-chmod a+rx /usr/local/bin/youtube-dl && \
+chmod a+rx /usr/local/bin/youtube-dl \
 
 EXPOSE 80 443
